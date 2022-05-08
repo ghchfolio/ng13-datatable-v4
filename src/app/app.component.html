@@ -1,0 +1,160 @@
+<main class="container p-3">
+
+    <h1 class="h4">Datatables in Angular</h1>
+
+    <!-- tabs -->
+    <ul class="nav nav-pills justify-content-center my-4">
+        <li class="nav-item">
+            <a href="#cartoonCharacters" class="nav-link" data-bs-toggle="tab">Cartoon Characters</a>
+        </li>
+        <li class="nav-item">
+            <a href="#commentsTabContent" class="nav-link" data-bs-toggle="tab">Comments</a>
+        </li>
+        <li class="nav-item">
+            <a href="#checklistTabContent" class="nav-link active" data-bs-toggle="tab">Checklist</a>
+        </li>
+    </ul>
+
+    <!-- tabs content -->
+    <div class="tab-content p-4">
+        <!-- cartoon tab  -->
+        <div class="tab-pane fade" id="cartoonCharacters">
+            <h2 class="h6 text-center">Cartoons Characters</h2>
+
+            <!-- cartoon data table -->
+            <table id="cartoonDataTable" class="display table table-striped table-sm">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Web Rank</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let person of cartoonData">
+                        <td>{{ person.name }}</td>
+                        <td>{{ person.email }}</td>
+                        <td>{{ person.webrank }}</td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+
+        <!-- comments tab -->
+        <div class="tab-pane fade" id="commentsTabContent">
+            <h2 class="h6 text-center">Comments</h2>
+
+            <!-- comments data table -->
+            <table id="commentsDataTable" class="display table table-striped table-sm">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- checklist tab -->
+        <div class="tab-pane fade show active" id="checklistTabContent">
+            <h2 class="h6 text-center">Checklist</h2>
+
+            <form action="">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="npmOrCdn" checked>
+                    <label class="form-check-label" for="npmOrCdn">
+                        NPM / CDN available
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="withoutAngular" checked>
+                    <label class="form-check-label" for="withoutAngular">
+                        With/without Angular
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="bs5compatible" checked>
+                    <label class="form-check-label" for="bs5compatible">
+                        Works with Bootsrap 5
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="enhancable" checked>
+                    <label class="form-check-label" for="enhancable">
+                        Extensible (can add classes to make even more responsive)
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="configurable" checked>
+                    <label class="form-check-label" for="configurable">
+                        Configurable (limited, and custom placement of UI requires some work)
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="builtInResponsivness" checked>
+                    <label class="form-check-label" for="builtInResponsivness">
+                        Responsive features - fixed columns, toggle columns
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="builtInExportButtons" checked>
+                    <label class="form-check-label" for="builtInExportButtons">
+                        Export buttons - copy, pdf, xslx, print
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="styleable">
+                    <label class="form-check-label" for="styleable">
+                        Easily styled table and buttons
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="documentation">
+                    <label class="form-check-label" for="documentation">
+                        Good documentation (a lot to sift through, will have to check other resources too)
+                    </label>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <hr>
+
+    <!-- notes -->
+    <details open="true">
+        <summary>Notes</summary>
+        <ul>
+            <li>Use the bundler on the <a href="https://datatables.net/download/" target="_blank" noopener noreferrer>
+                    download page</a> to select and install libraries</li>
+            <li>Features (e.g. pagination) can be placed around the table <u>limitedly</u></li>
+            <li>"l" must be added to the dom property for the length menu to show</li>
+        </ul>
+    </details>
+
+    <!-- resources -->
+    <details>
+        <summary>Resources</summary>
+
+        <ul>
+            <li><a href="https://datatables.net/download/" target="_blank" rel="noopener noreferrer">Datatable
+                    bundler</a></li>
+            <li><a href="https://datatables.net/extensions/buttons/examples/initialisation/export.html" target="_blank"
+                    rel="noopener noreferrer">Buttons</a></li>
+            <li><a href="https://datatables.net/examples/basic_init/dom.html" target="_blank"
+                    rel="noopener noreferrer">Simple set up</a></li>
+            <li><a href="https://datatables.net/reference/option/pagingType" target="_blank"
+                    rel="noopener noreferrer">Simple set up</a></li>
+            <li><a href="https://stackoverflow.com/questions/27778389/how-to-manually-update-datatables-table-with-new-json-data"
+                    target="_blank" rel="noopener noreferrer">Handling API response (jquery)</a></li>
+            <li><a href="https://www.tutorialrepublic.com/twitter-bootstrap-tutorial/bootstrap-tabs.php" target="_blank"
+                    rel="noopener noreferrer">Bootsrap tabs</a></li>
+            <li><a href="https://www.youtube.com/watch?v=RR7GPsN-3mM" target="_blank"
+                    rel="noopener noreferrer">Datatables pagination (YT)</a>
+            </li>
+        </ul>
+    </details>
+</main>
